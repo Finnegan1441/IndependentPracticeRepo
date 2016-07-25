@@ -29,9 +29,11 @@ public class MainActivity extends AppCompatActivity {
         actorList.add(new Actor("Matt Damon", "October 8, 1970", 1));
         actorList.add(new Actor("Jennifer Lawrence", "August 15, 1990", 1));
         actorList.add(new Actor("Sammuel Jackson", "August 15, 1990", 1));
+
+
     }
 
     private void setViews() {
-        mListView = (ListView) findViewById(R.id.ListView);
+        mListView = (ListView) findViewById(R.id.listviewlay);
     }
 }

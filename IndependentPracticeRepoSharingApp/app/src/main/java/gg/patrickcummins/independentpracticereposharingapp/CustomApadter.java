@@ -41,13 +41,18 @@ public class CustomApadter extends BaseAdapter{
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder;
         if (convertView == null){
-            convertView= LayoutInflater.from(context).inflate(R.layout.actor_item, parent, false);
+            convertView= LayoutInflater.from(context).inflate(R.layout.actors_item, parent, false);
             viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder);
         }else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        
+        final Actor currentActor =actorArrayList.get(position);
+
+        viewHolder.actorNameTextView.setText("Name: " + currentActor.getName());
+        viewHolder.actorDobTextView.setText("DOB: " + currentActor.getDob());
+        viewHolder.oscarsWonTextView.setText("Oscars Won: " + currentActor.getOscarsWon());
+
 
 
 
@@ -62,7 +67,7 @@ public class CustomApadter extends BaseAdapter{
         public ViewHolder (View itemLayout){
             this.actorNameTextView = (TextView) itemLayout.findViewById(R.id.actorName);
             this.actorDobTextView = (TextView) itemLayout.findViewById(R.id.actorDob);
-            this.oscarsWonTextView = (TextView) itemLayout.findViewById(R.id.oscars)
+            this.oscarsWonTextView = (TextView) itemLayout.findViewById(R.id.oscars);
         }
     }
 }
